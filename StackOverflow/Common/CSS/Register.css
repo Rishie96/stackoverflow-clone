@@ -1,0 +1,113 @@
+﻿.button-signup-inner {
+    outline: none;
+    padding: 5px;
+    border: 1px solid #0095ff;
+    background-color: #0095ff;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button-google-signup {
+    outline: none;
+    padding: 5px;
+    width: 75px;
+    border: 1px solid #d6d9dc;
+    background-color: white;
+    font-size: 14px;
+    color: black;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    height: 45px;
+}
+
+.button-github-signup {
+    outline: none;
+    padding: 5px;
+    width: 75px;
+    border: 1px solid #2f3337;
+    background-color: #2f3337;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    height: 45px;
+}
+
+.button-facebook-signup {
+    outline: none;
+    padding: 5px;
+    width: 75px;
+    border: 1px solid #385499;
+    background-color: #385499;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    height: 45px;
+}
+
+.content-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-form {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+.content-left {
+    width: 400px;
+    text-align: left;
+}
+
+.content-with-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contianer-primary-signup {
+    background-color: #eff0f1;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+.logo-signup {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.max-width-sm {
+    width: 330px;
+}
+
+.signup-eula {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.signup-login {
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+}

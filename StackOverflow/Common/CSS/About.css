@@ -1,0 +1,43 @@
+﻿.content-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.content-padding-20 {
+    padding: 20px;
+    margin-left: 48px;
+}
+
+.max-width-sm {
+    max-width: 600px;
+}
+
+.text-dull {
+    color: #848d95;
+}
+
+.text-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text-title-lg {
+    font-size: 48px;
+    font-weight: 480;
+}
+
+.text-secondary-custom {
+    color: #535a60;
+    font-size: 16px;
+}
+
+.primary-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.primary-image-container {
+}

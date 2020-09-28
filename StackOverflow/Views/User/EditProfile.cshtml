@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "User Profile";
+}
+<script type="text/javascript">
+    const hideMessageBox = () => {
+        $("#message-box").hide();
+    };
+    $(document).ready(() => {
+        setTimeout(() => {
+            hideMessageBox();
+        }, 4000);
+    });
+</script>
+<link href="~/Common/CSS/Profile.css" rel="stylesheet" />
+<div style="position: relative">
+    <div class="container-fluid" onload="unmountMessageBox()">
+        <div class="content-center">
+            <div class="container-login">
+                <div class="alert alert-info" role="alert">
+                    You can edit your profile on this page. Make sure you don't miss out the *required fields!
+                </div>
+                <form class="container-form shadow-lg" method="POST" action="/editprofile">
+                    <input type="hidden" class="form-control" name="UserID" value="@ViewBag.UserDetails.UserID">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>First Name*</b></label>
+                        <input required="required" type="text" class="form-control" name="FirstName" value="@ViewBag.UserDetails.FirstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Last Name*</b></label>
+                        <input required="required" type="text" class="form-control" name="LastName" value="@ViewBag.UserDetails.LastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Date of Birth*</b></label>
+                        <input required="required" type="date" class="form-control" name="BirthDate" value="@ViewBag.UserDetails.BirthDate.ToString("yyyy-MM-dd")">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Gender</b></label>
+                        <select class="custom-select" name="Gender">
+                            @{
+                                if (ViewBag.UserDetails.Gender == "Male")
+                                {
+                                    <option selected="selected" value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                }
+                                else if (ViewBag.UserDetails.Gender == "Female")
+                                {
+                                    <option value="Male">Male</option>
+                                    <option selected="selected" value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                }
+                                else
+                                {
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option selected="selected" value="Other">Other</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>City</b></label>
+                        <input type="text" class="form-control" name="City" value="@ViewBag.UserDetails.City">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>State</b></label>
+                        <input type="text" class="form-control" name="State" value="@ViewBag.UserDetails.State">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Country</b></label>
+                        <input type="text" class="form-control" name="Country" value="@ViewBag.UserDetails.Country">
+                    </div>
+                    <button type="submit" class="button-signup-inner">Update</button>
+                </form>
+                <p class="signup-login">
+                    Click on update to update and save your details
+                </p>
+            </div>
+        </div>
+    </div>
+    @{
+        if (ViewBag.Updated != 0)
+        {
+            <div class="alert alert-success user-message-box" role="alert" id="message-box">
+                Your details were updated
+            </div>
+        }
+    }
+</div>
+

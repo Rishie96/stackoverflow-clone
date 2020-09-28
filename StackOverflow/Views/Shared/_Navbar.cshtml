@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Common/CSS/Navbar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <title>Stack Overflow</title>
+    <script type="text/javascript">
+        if (sessionStorage.getItem("hideMessageBox") != "yes") {
+            setTimeout(() => {
+                $(document).ready(function () {
+                    $('#disclaimer-box-nav').modal('show');
+                });
+            });
+        }
+        const hideDisclaimer = () => {
+            $("#disclaimer-box-nav").hide();
+            sessionStorage.setItem("hideMessageBox", "yes");
+        };
+    </script>
+</head>
+<body>
+    <div style="position: relative">
+        <div class="contentCenter" style="background-color: #f8f9fa">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="https://stackoverflow.com" target="_blank"><img src="~/Common/Images/stackoverflow.png" class="logo" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item mr-sm-3">
+                            <div class="dropdown">
+                                <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Products
+                                </a>
+                                <div class="dropdown-menu max-width-120" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">
+                                        <div class="content-break">
+                                            <p class="dropdown-title">Stack Overflow</p>
+                                            <div class="dropdown-content">Public questions & answers</div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="content-break">
+                                            <p class="dropdown-title">Stack Overflow for Teams</p>
+                                            <div class="dropdown-content">
+                                                Where developers & technologists share private knowledge with coworkers
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="content-break">
+                                            <p class="dropdown-title">Jobs</p>
+                                            <div class="dropdown-content">Programming & related technical career opportunities</div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="content-break">
+                                            <p class="dropdown-title">Talent</p>
+                                            <div class="dropdown-content">
+                                                Recruit tech talent & build your employer brand
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="content-break">
+                                            <p class="dropdown-title">Advertising</p>
+                                            <div class="dropdown-content">
+                                                Reach developers & technologists worldwide
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-4" type="search" size="50" placeholder="Search" aria-label="Search">
+                        <a class="button-business mr-sm-2 text-decoration-none" style="cursor: pointer" href="/posts">
+                            Posts
+                        </a>
+                        @{
+                            if (Session["UserID"] != null)
+                            {
+                                if (Session["FirstName"] != null)
+                                {
+                                    <a class="user-name mr-sm-2 text-decoration-none" href="/editprofile">@Session["FirstName"].ToString()</a>
+                                }
+                                <a class="button-login mr-sm-2 text-decoration-none" style="cursor: pointer" href="/logout">Logout</a>
+                            }
+                            else
+                            {
+                                <a class="button-login mr-sm-2 text-decoration-none" style="cursor: pointer" href="/login">Login</a>
+                                <a class="button-signup text-decoration-none" style="cursor: pointer" href="/register">Sign Up</a>
+                            }
+                        }
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+        <div id="disclaimer-box-nav" class="modal modal-wide fade">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Disclaimer</h5>
+                    </div>
+                    <div class="modal-body">
+                        This application is developed for educational purpose only. The content seen on this page was taken from, and belongs to <a href="https://stackoverflow.com" target="_blank" class="text-decoration-none">stackoverflow</a>.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideDisclaimer()">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

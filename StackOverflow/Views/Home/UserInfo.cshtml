@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "User Information";
+}
+
+<link href="~/Common/CSS/Details.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="content-center">
+        <div class="container-login">
+            <div class="alert alert-success" role="alert">
+                We need the following (*required) details to get you started. Complete this step and you are all set!
+            </div>
+            <form class="container-form shadow-lg" method="POST" action="/userinfo">
+                <input type="hidden" class="form-control" name="UserID" value="@ViewBag.UserID">
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>First Name*</b></label>
+                    <input required="required" type="text" class="form-control" name="FirstName" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>Last Name*</b></label>
+                    <input required="required" type="text" class="form-control" name="LastName" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>Date of Birth*</b></label>
+                    <input required="required" type="date" class="form-control" name="BirthDate" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>Gender</b></label>
+                    <select class="custom-select" name="Gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>City</b></label>
+                    <input type="text" class="form-control" name="City" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>State</b></label>
+                    <input type="text" class="form-control" name="State" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"><b>Country</b></label>
+                    <input type="text" class="form-control" name="Country" aria-describedby="emailHelp">
+                </div>
+                <button type="submit" class="button-signup-inner">Save</button>
+            </form>
+            <p class="signup-login">
+                Please fill all the required fields
+            </p>
+        </div>
+    </div>
+</div>
+

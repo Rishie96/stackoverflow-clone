@@ -1,0 +1,83 @@
+﻿.button-login {
+    outline: none;
+    padding: 5px;
+    width: 75px;
+    border: 1px solid #39739d;
+    background-color: #e1ecf4;
+    font-size: 14px;
+    color: #39739d;
+    border-radius: 4px;
+}
+
+.button-signup {
+    outline: none;
+    padding: 5px;
+    width: 75px;
+    border: 1px solid #0095ff;
+    background-color: #0095ff;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-business {
+    outline: none;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #f48024;
+    background-color: #f48024;
+    font-size: 16px;
+    color: white;
+    border-radius: 4px;
+}
+
+.content-break {
+    width: 100%;
+    word-break: break-word;
+    white-space: initial;
+}
+
+.contentCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.dropdown-title {
+    font-size: 13px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dropdown-content {
+    font-size: 13px;
+    padding: 0px;
+    margin: 0px;
+    color: #6a737c;
+}
+
+.logo {
+    width: 160px;
+    height: 30px;
+}
+
+.max-width-120 {
+    width: 200px;
+}
+
+.navContainer {
+    padding: 0px
+}
+
+.user-name {
+    outline: none;
+    padding: 5px;
+    width: 75px;
+    font-size: 16px;
+    color: #39739d;
+    border-radius: 4px;
+}

@@ -1,0 +1,193 @@
+﻿@model List<StackOverflow.Models.Questions>
+@{
+    ViewBag.Title = "Posts";
+}
+<link href="~/Common/CSS/Posts.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="content-center">
+        <div class="row container-posts">
+            <div class="col-8">
+                <div class="content-center">
+                    <div class="container-left">
+                        <p class="title-questions">Top Questions</p>
+                    </div>
+                    <div class="container-right">
+                        <a href="/askquestion">
+                            <button class="button-ask-question" id="btn-add-question">Ask question</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="filter-buttons">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-secondary active">
+                            <small>
+                                Interesting
+                            </small>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary"><small>Hot</small></button>
+                        <button type="button" class="btn btn-outline-secondary">
+                            <small>
+                                Week
+                            </small>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary">
+                            <small>
+                                Month
+                            </small>
+                        </button>
+                    </div>
+                </div>
+                <div class="container-inner-posts">
+                    @{
+                        foreach (var question in Model)
+                        {
+                            <div class="content-row">
+                                <div class="content-row">
+                                    <div class="content-vote-views">
+                                        <div>
+                                            8
+                                        </div>
+                                        <div>
+                                            <small>
+                                                votes
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="content-answers">
+                                        <div>
+                                            2
+                                        </div>
+                                        <div>
+                                            <small>
+                                                answers
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="content-vote-views">
+                                        <div>
+                                            48
+                                        </div>
+                                        <div>
+                                            <small>
+                                                views
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-single-question">
+                                    <a href="/viewpost/@question.PostID" class="text-decoration-none">
+                                        <h5 class="card-title" style="color: #0064bd">@question.Title</h5>
+                                    </a>
+                                    @{
+                                        if (!String.IsNullOrEmpty(question.Category))
+                                        {
+                                            <div>
+                                            @{ 
+                                                var tags = question.Category.Split(',');
+                                                foreach (var tag in tags)
+                                                {
+                                                    <span class="badge badge-primary tag">@tag</span>
+                                                }
+                                            }
+                                            </div>
+                                        }
+                                    }
+                                    <p class="last-activity"><small class="text-muted">Posted on @question.Date.ToString("d MMM, yyy")</small></p>
+                                </div>
+                            </div>
+                            <hr />
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="right-box">
+                    <div class="shadow-lg right-box-1">
+                        <div class="right-box-title">
+                            The overflow blog
+                        </div>
+                        <a href="https://stackoverflow.blog/2020/09/23/hiring-jobs-candidates-software-coding-programmers-teresa-dietrich/?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <i class="material-icons box-icon">create</i>
+                                    What I learned from hiring hundreds of engineers can help you land your next role.
+                                </div>
+                            </div>
+                        </a>
+                        <div class="right-box-title">
+                            Featured on meta
+                        </div>
+                        <a href="https://meta.stackexchange.com/questions/353492/hot-meta-posts-allow-for-removal-by-moderators-and-thoughts-about-future-impro?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <i class="material-icons box-icon-primary">chat_bubble_outline</i>
+                                    Allow for removal by moderators, and thoughts about future improvements.
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://meta.stackexchange.com/questions/353983/goodbye-prettify-hello-highlight-js-swapping-out-our-syntax-highlighter?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <i class="material-icons box-icon-primary">chat_bubble_outline</i>
+                                    Goodbye, Prettify. Hello highlight.js! Swapping out our Syntax Highlighter.
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://meta.stackoverflow.com/questions/401031/how-does-the-highlight-js-change-affect-stack-overflow-specifically?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <i class="material-icons box-icon-dull">question_answer</i>
+                                    How does the highlight.js change affect Stack Overflow specifically?
+                                </div>
+                            </div>
+                        </a>
+                        <div class="right-box-title">
+                            Hot meta posts
+                        </div>
+                        <a href="https://meta.stackoverflow.com/questions/401508/is-the-maven-3-tag-no-longer-necessary?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <span class="number-dull">14</span>
+                                    Is the [maven-3] tag no longer necessary?
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://meta.stackoverflow.com/questions/401482/why-is-the-posted-date-on-jobs-completely-made-up?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <span class="number-dull">49</span>
+                                    Why is the Posted Date on Jobs completely made up?
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://meta.stackoverflow.com/questions/401483/retag-proc-filesystem-questions-tagged-proc-to-procfs?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <span class="number-dull">15</span>
+                                    Retag /proc filesystem questions tagged [proc] to [procfs].
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://meta.stackoverflow.com/questions/401521/new-syntax-highlight-colors-for-dark-theme-are-wildly-different-with-change-of-h?cb=1" target="_blank" class="text-decoration-none">
+
+                            <div class="right-box-text">
+                                <div class="content-row">
+                                    <span class="number-dull">24</span>
+                                    New Syntax Highlight Colors for Dark Theme are Wildly Different with Change of Highlight Engine.
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

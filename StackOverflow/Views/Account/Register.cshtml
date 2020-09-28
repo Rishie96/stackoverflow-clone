@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+<link href="~/Common/CSS/Register.css" rel="stylesheet" />
+<div class="container-fluid contianer-primary-signup">
+    <div class="row">
+        <div class="col content-center">
+            <div class="content-left">
+                <h4>
+                    Join the Stack Overflow community
+                </h4>
+                <div style="margin-top: 30px">
+                    <div class="content-with-icon"><i style="color:#0077cc" class="material-icons mr-sm-3">question_answer</i> Get unstuck — ask a question</div>
+                    <div class="content-with-icon">
+                        <i style="color:#0077cc" class="material-icons mr-sm-3">thumbs_up_down</i> Unlock new privileges like voting and commenting
+                    </div>
+                    <div class="content-with-icon"><i style="color:#0077cc" class="material-icons mr-sm-3">local_offer</i> Save your favorite tags, filters, and jobs</div>
+                    <div class="content-with-icon"><i style="color:#0077cc" class="material-icons mr-sm-3">emoji_events</i> Earn reputation and badges</div>
+                    <p class="signup-eula">
+                        Use the power of Stack Overflow inside your organization.
+                        Try a <span style="color:#0077cc">free trial of Stack Overflow for Teams.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="max-width-sm">
+                <button type="submit" class="button-google-signup"><img class="logo-signup" src="~/Common/Images/google-logo.png" /> Sign up with Google</button>
+                <button type="submit" class="button-github-signup"><img class="logo-signup" src="~/Common/Images/github-logo.png" /> Sign up with Github</button>
+                <button type="submit" class="button-facebook-signup"><img class="logo-signup" src="~/Common/Images/fb-logo.png" /> Sign up with Facebook</button>
+                <form class="container-form shadow-lg" method="POST" action="/register">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><b>Email</b></label>
+                        <input type="email" class="form-control" name="Email" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Password</b></label>
+                        <input type="password" class="form-control" name="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Confirm Password</b></label>
+                        <input type="password" class="form-control" name="ConfirmPassword">
+                    </div>
+                    <button type="submit" class="button-signup-inner">Sign Up</button>
+                    <p class="signup-eula">
+                        By clicking “Sign up”, you agree to our <span style="color:#0077cc">terms of service, privacy policy</span> and <span style="color:#0077cc">cookie policy.</span>
+                    </p>
+                </form>
+                <p class="signup-login">
+                    Already have an account? <span style="color:#0077cc">
+                        <a class="text-decoration-none" href="/login">
+                            Log in
+                        </a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Posts";
+}
+<link href="~/Common/CSS/AskQuestion.css" rel="stylesheet" />
+<script type="text/javascript">
+</script>
+<div class="container-primary">
+    <div class="content-center">
+        <div class="max-width-75">
+            <div style="width: 100%">
+                <div class="question-header">
+                    <div class="header-title">Ask a public question</div>
+                    <div class="header-image">
+                        <img src="~/Common/Images/ask-question.svg" style="height: 130px" alt="Ask Question" />
+                    </div>
+                </div>
+            </div>
+            <div class="container-row">
+                <div class="container-form-question shadow-lg">
+                    <form method="POST" action="/askquestion">
+                        <input type="hidden" name="UserID" value="@ViewBag.UserID" />
+                        <input type="hidden" name="Date" value="@DateTime.UtcNow.ToString("yyyy-MM-dd")" />
+                        <div class="form-group">
+                            <label for="Title">
+                                <b>Title*</b><br />
+                                <small>Be specific and imagine you’re asking a question to another person</small>
+                            </label>
+                            <input required="required" type="text" class="form-control" name="Title" placeholder="e.g execution phase of life-cycle events in reactjs?">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">
+                                <b>Body*</b><br />
+                                <small>Include all the information someone would need to answer your question</small>
+                            </label>
+                            <textarea required="required" name="Description" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="Category">
+                                <b>Tags</b><br />
+                                <small>Add up to 5 tags to describe what your question is about</small>
+                            </label>
+                            <input type="text" class="form-control" name="Category" placeholder="e.g javascript, react, asp .net">
+                        </div>
+                        <p class="signup-eula font-italic mt-4">
+                            *Review your question before submitting. You can submit by clicking the Submit button below.
+                        </p>
+                        <div class="content-left-button">
+                            <button type="submit" class="btn-submit-question">Submit question</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col">
+                    <div class="container-tips shadow-sm">
+                        <div class="container-right-tips">
+                            <div class="container-right-title">
+                                Draft your question
+                            </div>
+                            <div class="container-right-text">
+                                The community is here to help you with specific coding, algorithm, or language problems.
+                                <div class="mt-2">
+                                    Avoid asking opinion-based questions.
+                                </div>
+                                <div class="mt-2">
+                                    <ul class="font-weight-bold">
+                                        <li>Summarize the problem</li>
+                                        <li>Describe what you've tried</li>
+                                        <li>Show some code</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-tips shadow-s">
+                        <div class="container-right-tips">
+                            <div class="container-right-title">
+                                Some helpful links
+                            </div>
+                            <div class="container-right-text">
+                                Find more information about <a class="text-decoration-none" href="https://stackoverflow.com/help/how-to-ask" target="_blank">
+                                    how to ask a good question here.
+                                </a>
+                                <div class="mt-2">
+                                    Visit the <a class="text-decoration-none" href="https://stackoverflow.com/help" target="_blank">help center.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
